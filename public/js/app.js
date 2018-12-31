@@ -1816,7 +1816,8 @@ __webpack_require__.r(__webpack_exports__);
       showAddBook: false
     };
   },
-  mounted: function mounted() {// this.getBookList();
+  mounted: function mounted() {
+    this.getBookList();
   },
   computed: {
     orderedBookList: function orderedBookList() {
@@ -1859,7 +1860,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       axios.get('/index').then(function (response) {
-        _this3.bookList = response.book;
+        console.log(response);
+        _this3.bookList = response.data;
       });
     }
   }

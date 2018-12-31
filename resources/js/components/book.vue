@@ -53,7 +53,7 @@
           }
         },
         mounted() {
-          // this.getBookList();
+          this.getBookList();
         },
         computed: {
           orderedBookList() {
@@ -87,7 +87,8 @@
           },
           getBookList() {
             axios.get('/index').then((response) => {
-              this.bookList = response.book;
+              console.log(response);
+              this.bookList = response.data;
           })
         }
       }
