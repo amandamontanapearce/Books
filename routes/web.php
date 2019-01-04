@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 // break into different controllers
 Route::post ( '/addBook', 'BookController@create' );
-Route::post ( '/deleteBook', 'BookController@destroy' );
+Route::post ( '/deleteBook/{id}', 'BookController@destroy' );
 Route::get ( '/index', 'BookController@index' );

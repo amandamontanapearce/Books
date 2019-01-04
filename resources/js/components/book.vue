@@ -1,3 +1,4 @@
+
 <template>
   <div class="container-fluid">
     <div class="row">
@@ -45,8 +46,7 @@
             newBook: {
               title: '',
               author: '',
-              publication_date: '',
-              order: ''
+              publication_date: ''
             },
             bookList: [],
             showAddBook: false,
@@ -65,14 +65,13 @@
         },
         methods: {
           deleteBook(book) {
-            axios.post('/deleteBook', book.id).then((response) => {
+            axios.post(`/deleteBook/${book.id}`).then((response) => {
               this.getBookList();
             })
           },
           addBook() {
             // needs validation
             const input = this.newBook;
-            console.log(input);
             axios.post('/addBook', input).then((response) => {
               this.clear()
               this.getBookList();
@@ -87,7 +86,6 @@
           },
           getBookList() {
             axios.get('/index').then((response) => {
-              console.log(response);
               this.bookList = response.data;
           })
         }

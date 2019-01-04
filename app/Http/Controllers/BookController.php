@@ -20,12 +20,12 @@ class BookController extends Controller
 
     public function index()
     {
-    $books = Book::all ();
-    return $books;
+      $books = Book::all ();
+      return $books;
     }
 
-    public function destroy(Book $book)
+    public function destroy(Request $request)
     {
-        //
+        $book = Book::find($request->id)->delete();
     }
 }

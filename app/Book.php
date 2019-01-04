@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-  // use SoftDeletes;
+  // should use SoftDeletes;
 
   protected $table = 'books';
   public $timestamps = false;
