@@ -13,8 +13,10 @@ class BookTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function basicLoad()
     {
-        $this->assertTrue(true);
+      $response = $this->get('/');
+
+      $response->assertStatus(200);
     }
 }
