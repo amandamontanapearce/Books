@@ -13,9 +13,21 @@ class BookTest extends TestCase
      *
      * @return void
      */
-    public function basicLoad()
+    public function showBookLoad()
     {
-      $response = $this->get('/');
+      $response = $this->get('/index');
+
+      $response->assertStatus(200);
+    }
+    public function addBookLoad()
+    {
+      $response = $this->post('/addBook');
+
+      $response->assertStatus(200);
+    }
+    public function deleteBookLoad()
+    {
+      $response = $this->post('/deleteBook/4');
 
       $response->assertStatus(200);
     }

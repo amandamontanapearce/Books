@@ -5,7 +5,6 @@
       <div class="col">
         <h1>My Book List</h1>
         <div class="form-group">
-          <!-- form needs validation -->
           <!-- need loading for crud -->
           <label for="title">Title:</label>
           <input v-validate="'required|min:3'" class="form-control" type="text" name="title" v-model="newBook.title">
